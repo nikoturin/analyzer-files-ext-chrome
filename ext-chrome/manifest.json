@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "TXT Uploader Extension",
+  "version": "1.0",
+  "description": "Check selection files TXT to analize before to do any submit(CiberSecurity Department) ...",
+  "permissions": [
+  ],
+  "host_permissions": [
+    "<all_urls>", 
+    "http://<ip api server>:8000/items/" 
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
